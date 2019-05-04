@@ -45,8 +45,9 @@ function! s:do_script() abort
 
     exe '!'.cmd.' '.path.'/'.scriptName
     call nerdtree#echo("Script '" . scriptName . "' created.")
-    call node.refresh()
-    redraw!
+    call node.refresh() " this is to show the file in nerdtree
+    call node.refresh() " this is to indent it correctly
+    call b:NERDTree.render()
 endfunction
 
 function! DoScript() abort
