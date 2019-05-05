@@ -11,6 +11,14 @@ By using 👇
 - NERDTreeMenu
 - NERDTreeKeyMap
 
+## Installation
+
+With [vim-plug](https://github.com/junegunn/vim-plug):
+
+```vim
+Plug 'cabaalexander/nerdtree-doscript'
+```
+
 ## NERDTreeMenu
 
 This adds a new item (`do a script (h)ere`) to the menu.
@@ -30,7 +38,7 @@ NERDTree Menu. Use j/k/enter . or the shortcuts indicated
 
 ## NERDTreeKeyMap
 
-This is the mapping added for creating a script with a few key stokes. Below
+This is the mapping added `ds`, for creating a script with a few key stokes. Below
 there is an example showing you your custom mappings (`Press (?) when
 nerdtree is open`)
 
