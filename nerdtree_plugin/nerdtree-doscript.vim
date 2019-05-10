@@ -19,12 +19,12 @@ let g:loaded_nerdtree_doscript = 1
 function! s:do_script() abort
     let node = g:NERDTreeFileNode.GetSelected()
 
-    if empty(node) || !node.path.isDirectory
-        call nerdtree#echo('This action cannot be done here. (Try on a dir)')
+    if empty(node)
+        call nerdtree#echo('Node not found/correct.')
         return
     endif
 
-    let path = node.path.str()
+    let path = node.path.isDirectory ? node.path.str() : node.parent.path.str()
     let title = 'Do a script here'
     let scriptTemplate = '\#\!/bin/bash\nset -Eeuo pipefail'
     let cmd = 'f(){
@@ -67,5 +67,5 @@ call NERDTreeAddKeyMap({
             \ 'key': 'ds',
             \ 'callback': 'DoScriptKeyMap',
             \ 'quickhelpText': 'Create an executable script',
-            \ 'scope': 'DirNode' })
+            \ 'scope': 'Node' })
 
